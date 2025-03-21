@@ -4,11 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Main {
-    enum SelectAttributeForSort {
-        ID, NAME, SALARY
-    }
 
-    public static Comparator<Employee> getComparatorForSort(SelectAttributeForSort p) {
+
+    public static Comparator<Employee> getComparatorForSort(SeleceParameterForSort p) {
         switch (p){
             case ID: return new SortWitID();
             case NAME: return new SortWithName();
@@ -34,9 +32,8 @@ public class Main {
 //        Collections.sort(employees, new SortWithSalary());
 
 
-        SelectAttributeForSort parameter = SelectAttributeForSort.SALARY;
 //        parameter.value
-        Collections.sort(employees, getComparatorForSort(parameter));
+        Collections.sort(employees, new EmployeeComparator(SeleceParameterForSort.ID));
 
 
         System.out.println("\nAfter Sorting by ID:");
