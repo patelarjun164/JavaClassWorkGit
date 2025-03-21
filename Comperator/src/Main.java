@@ -1,20 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class Main {
-
-
-    public static Comparator<Employee> getComparatorForSort(SeleceParameterForSort p) {
-        switch (p){
-            case ID: return new SortWitID();
-            case NAME: return new SortWithName();
-            case SALARY: return new SortWithSalary();
-        }
-
-        return new SortWitID();
-    }
 
     public static void main(String[] args) {
         System.out.println("Hello, World!");
@@ -33,7 +20,7 @@ public class Main {
 
 
 //        parameter.value
-        Collections.sort(employees, new EmployeeComparator(SeleceParameterForSort.ID));
+        Collections.sort(employees, new EmployeeComparator(SeleceParameterForSort.NAME));
 
 
         System.out.println("\nAfter Sorting by ID:");
